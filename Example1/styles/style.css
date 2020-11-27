@@ -35,12 +35,14 @@ a:hover {
 
 /* Styles for the hero image */
 .hero {
-  /* Photo by mnm.all on Unsplash */
   background: url('https://cdn.vox-cdn.com/thumbor/uRUbHd-T8HDQEASTCoo2qy0Z-Kw=/0x0:2040x1360/1200x800/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/64969806/acastro_181026_1777_twitch_0001.0.jpg') center;
   background-size: cover;
   padding: 4rem 2rem;
   /* grid styles */
   display: grid;
+  /*The auto-fit keyword allows us to wrap our columns into rows when there’s not enough space in our viewport
+    to fit the 240px minimum value without overflowing the content.
+    We set our minmax() property to be 240px at its minimum size, and 1fr at its maximum size.*/
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   align-items: center;
 }
