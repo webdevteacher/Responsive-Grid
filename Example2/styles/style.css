@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp:wght@400;600&display=swap');
+
+*{
+  margin:0;
+  padding: 0;
+  list-style-type: none;
+}
+
+body{
+  font-family: 'MedievalSharp';
+  font-size: 22px;
+}
+
+main.gallery {
+  padding: 2rem;
+}
+
+.gallery > h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333333;
+  font-weight: 100;
+}
+
+.gallery > .gallery__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-rows: repeat(6, 200px);
+  grid-gap: 1rem;
+  grid-auto-flow: dense; /*we’re telling the grid to fill any gaps we might have with elements that could fit them*/
+}
+
+/* This will create 2x images every 4 elements */
+.gallery > .gallery__list > li:nth-child(4n) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* This will create 3x images every 8 elements */
+.gallery > .gallery__list > li:nth-child(8n) {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.gallery > .gallery__list > li > figure {
+  height: 100%;
+}
+
+/*object-fit works fairly similar to how background-image does, but for the HTML <img> tag*/
+.gallery > .gallery__list > li > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
